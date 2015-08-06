@@ -16,7 +16,9 @@ It is a low-cost design with a BOM value around $10.00​ and supported on all o
   - DCD-M: DroneCode Debug connector medium
   - 6-pos DF13 console cable (Pixhawk 1.x)
 
-## Suggested Packaging Content (JST SUR and SH required as minimum)
+## Suggested Packaging Content
+
+JST SUR and JST SH are required as minimum.
 
 - JST SUR 6 pos cable (available from [JST](http://www.jst.com/home9.html) or at lower quantities from 3D Robotics)
 - JST SH 6 pos cable ([SparkFun](https://www.sparkfun.com/products/9123))
