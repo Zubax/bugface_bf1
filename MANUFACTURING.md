@@ -80,7 +80,18 @@ Usage example:
 ## Flashing the main firmware
 
 Connect the board to USB while holding the button `BOOT`.
-The board should light up the red LED.
+The red LED on the board should start blinking.
+The system will report the device as follows:
+
+```
+$ dmesg
+usb 2-6.2.3: new full-speed USB device number 12 using ehci-pci
+usb 2-6.2.3: New USB device found, idVendor=1d50, idProduct=6017
+usb 2-6.2.3: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+usb 2-6.2.3: Product: Black Magic Probe (Upgrade)
+usb 2-6.2.3: Manufacturer: Black Sphere Technologies
+usb 2-6.2.3: SerialNumber: B5DCABF5
+```
 
 Then go to the directory with firmware sources and execute the following script:
 
@@ -100,16 +111,18 @@ The system will detect a new CDC-ACM device:
 
 ```
 $ dmesg
-usb 1-1.1: new full-speed USB device number 58 using ehci-pci
-usb 1-1.1: New USB device found, idVendor=1d50, idProduct=6018
-usb 1-1.1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
-usb 1-1.1: Product: Black Magic Probe
-usb 1-1.1: Manufacturer: Black Sphere Technologies
-usb 1-1.1: SerialNumber: 12345678
-cdc_acm 1-1.1:1.0: This device cannot do calls on its own. It is not a modem.
-cdc_acm 1-1.1:1.0: ttyACM0: USB ACM device
-cdc_acm 1-1.1:1.2: This device cannot do calls on its own. It is not a modem.
-cdc_acm 1-1.1:1.2: ttyACM1: USB ACM device
+usb 2-6.2.3: new full-speed USB device number 9 using ehci-pci
+usb 2-6.2.3: New USB device found, idVendor=1d50, idProduct=6018
+usb 2-6.2.3: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+usb 2-6.2.3: Product: Black Magic Probe
+usb 2-6.2.3: Manufacturer: Black Sphere Technologies
+usb 2-6.2.3: SerialNumber: B5DCABF5
+cdc_acm 2-6.2.3:1.0: This device cannot do calls on its own. It is not a modem.
+cdc_acm 2-6.2.3:1.0: ttyACM0: USB ACM device
+cdc_acm 2-6.2.3:1.2: This device cannot do calls on its own. It is not a modem.
+cdc_acm 2-6.2.3:1.2: ttyACM1: USB ACM device
+usbcore: registered new interface driver cdc_acm
+cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
 ```
 
 Connect the board to a target (e.g. another unflashed DroneCode Probe, as described in one of the steps above)
