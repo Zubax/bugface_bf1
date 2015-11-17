@@ -35,6 +35,8 @@ The output will contain the following two files (among others):
 * `blackmagic_dfu.bin` - DFU bootloader.
 * `blackmagic.bin` - main firmware.
 
+Prebuilt binaries can be found here: <https://files.zubax.com/products/dronecode_probe>.
+
 ## Flashing the DFU bootloader
 
 Flash the DFU bootloader image using one of the methods below.
