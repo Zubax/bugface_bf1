@@ -4,9 +4,7 @@ The DroneCode Probe is a generic JTAG / SWD + UART console adapter compatible wi
 designs and in particular with hardware maintained by the DroneCode project.
 It is a low-cost design with a BOM value around $10.00​ and supported on all operating systems (Windows, Linux, Mac OS).
 
-Product page: <http://zubax.com/product/dronecode-probe>
-
-Documentation: <http://docs.zubax.com/DroneCode_Probe>
+**Documentation: <https://kb.zubax.com/x/iIAh>**
 
 ## Key Features / Added Value
 
