@@ -4446,8 +4446,8 @@ No divider needed</text>
 <instance part="GND36" gate="1" x="40.64" y="33.02" smashed="yes">
 <attribute name="VALUE" x="40.64" y="31.75" size="1.27" layer="96" font="vector" ratio="15" align="center"/>
 </instance>
-<instance part="CON10" gate="G$1" x="177.8" y="25.4" smashed="yes">
-<attribute name="NAME" x="184.404" y="36.83" size="1.778" layer="95" font="vector" ratio="15" align="center"/>
+<instance part="CON10" gate="G$1" x="170.18" y="25.4" smashed="yes">
+<attribute name="NAME" x="176.784" y="36.83" size="1.778" layer="95" font="vector" ratio="15" align="center"/>
 </instance>
 </instances>
 <busses>
