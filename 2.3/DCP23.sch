@@ -541,13 +541,14 @@ www.fma.fujitsu.com/pdf/e713717.pdf</description>
 <smd name="P$6" x="0" y="-2.15" dx="2" dy="0.9" layer="16" roundness="100" rot="R180" cream="no"/>
 <text x="0" y="-0.8" size="1" layer="25" font="vector" ratio="15" align="center">&gt;NAME</text>
 </package>
-<package name="DF13C-6P-1.25V" urn="urn:adsk.eagle:footprint:8719647/1" locally_modified="yes" library_version="30" library_locally_modified="yes">
+<package name="DF13C-6P-1.25V" urn="urn:adsk.eagle:footprint:8719647/2" library_version="31" library_locally_modified="yes">
 <description>Single Row Straight Pin Header (SMT)</description>
 <wire x1="-5.325" y1="-2.33" x2="5.325" y2="-2.33" width="0.3048" layer="21"/>
 <wire x1="5.325" y1="-2.33" x2="5.325" y2="1.27" width="0.3048" layer="21"/>
 <wire x1="5.325" y1="1.27" x2="-5.325" y2="1.27" width="0.3048" layer="21"/>
 <wire x1="-5.325" y1="1.27" x2="-5.325" y2="-2.33" width="0.3048" layer="21"/>
 <rectangle x1="-3.75" y1="-1.205" x2="3.75" y2="1.17" layer="39"/>
+<rectangle x1="-5" y1="1.75" x2="-4.5" y2="2.25" layer="21"/>
 <smd name="1" x="-3.125" y="2.17" dx="0.7" dy="1.8" layer="1"/>
 <smd name="2" x="-1.875" y="2.17" dx="0.7" dy="1.8" layer="1"/>
 <smd name="3" x="-0.625" y="2.17" dx="0.7" dy="1.8" layer="1"/>
@@ -557,7 +558,6 @@ www.fma.fujitsu.com/pdf/e713717.pdf</description>
 <smd name="G2" x="5.575" y="-0.53" dx="2.2" dy="1.6" layer="1" rot="R90"/>
 <smd name="G1" x="-5.575" y="-0.53" dx="2.2" dy="1.6" layer="1" rot="R90"/>
 <text x="0" y="0" size="1" layer="25" font="vector" ratio="15" align="center">&gt;NAME</text>
-<rectangle x1="-5" y1="1.75" x2="-4.5" y2="2.25" layer="21"/>
 </package>
 <package name="SM06B" urn="urn:adsk.eagle:footprint:1041169/2" library_version="27" library_locally_modified="yes">
 <wire x1="-2.936" y1="-2.1" x2="2.936" y2="-2.1" width="0.2" layer="21"/>
@@ -619,7 +619,7 @@ www.fma.fujitsu.com/pdf/e713717.pdf</description>
 </package>
 </packages>
 <packages3d>
-<package3d name="MICRO_USB_WITH_PEGS" urn="urn:adsk.eagle:package:1041165/1" type="box" library_version="27" library_locally_modified="yes">
+<package3d name="MICRO_USB_WITH_PEGS" urn="urn:adsk.eagle:package:1041165/2" type="model" library_version="31" library_locally_modified="yes">
 <description>http://www.digikey.com/product-detail/en/10118193-0001LF/609-4616-1-ND/2785380</description>
 <packageinstances>
 <packageinstance name="MICRO_USB_WITH_PEGS"/>
@@ -635,7 +635,7 @@ www.fma.fujitsu.com/pdf/e713717.pdf</description>
 <packageinstance name="1051330011"/>
 </packageinstances>
 </package3d>
-<package3d name="DF13C-6P-1.25V" urn="urn:adsk.eagle:package:8719648/2" locally_modified="yes" type="model" library_version="30" library_locally_modified="yes">
+<package3d name="DF13C-6P-1.25V" urn="urn:adsk.eagle:package:8719648/3" type="model" library_version="31" library_locally_modified="yes">
 <description>Single Row Straight Pin Header (SMT)</description>
 <packageinstances>
 <packageinstance name="DF13C-6P-1.25V"/>
@@ -715,7 +715,7 @@ www.fma.fujitsu.com/pdf/e713717.pdf</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="USB" urn="urn:adsk.eagle:component:4410723/5" prefix="CON" library_version="27" library_locally_modified="yes">
+<deviceset name="USB" urn="urn:adsk.eagle:component:4410723/6" prefix="CON" library_version="31" library_locally_modified="yes">
 <description>Connector Receptacle USB - micro B 2.0 5 Position</description>
 <gates>
 <gate name="G$1" symbol="USB" x="0" y="0"/>
@@ -729,7 +729,7 @@ www.fma.fujitsu.com/pdf/e713717.pdf</description>
 <connect gate="G$1" pin="VBUS" pad="VBUS"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:1041165/1"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:1041165/2"/>
 </package3dinstances>
 <technologies>
 <technology name="">
@@ -777,7 +777,7 @@ www.fma.fujitsu.com/pdf/e713717.pdf</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="CON-6P" urn="urn:adsk.eagle:component:4707151/4" locally_modified="yes" prefix="CON" library_version="30" library_locally_modified="yes">
+<deviceset name="CON-6P" urn="urn:adsk.eagle:component:4707151/5" prefix="CON" library_version="31" library_locally_modified="yes">
 <description>CONN HEADER 6 POS</description>
 <gates>
 <gate name="G$1" symbol="SM06B-SURS-TF-1" x="0" y="5.08"/>
@@ -817,7 +817,7 @@ www.fma.fujitsu.com/pdf/e713717.pdf</description>
 <connect gate="G$1" pin="G2" pad="G1"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:8719648/2"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:8719648/3"/>
 </package3dinstances>
 <technologies>
 <technology name="">
@@ -1548,57 +1548,6 @@ http://www.txccrystal.com/images/pdf/7m-accuracy.pdf</description>
 <attribute name="TOLERANCE" value="+-20%" constant="no"/>
 <attribute name="VALUE" value="1µF" constant="no"/>
 <attribute name="VOLTAGE" value="100V" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="10NF" urn="urn:adsk.eagle:component:2539388/2" prefix="C" library_version="9">
-<gates>
-<gate name="G$1" symbol="C" x="0" y="0"/>
-</gates>
-<devices>
-<device name="-0402" package="C0402">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:2539379/2"/>
-</package3dinstances>
-<technologies>
-<technology name="-25V_10%_X7R">
-<attribute name="DIGIKEY#" value="490-1312-1-ND" constant="no"/>
-<attribute name="MANF" value="Murata Electronics North America" constant="no"/>
-<attribute name="MANF#" value="GRM155R71E103KA01D" constant="no"/>
-<attribute name="OPERATING_TEMP" value="-55°C ~ 125°C" constant="no"/>
-<attribute name="PACKAGE" value="0402" constant="no"/>
-<attribute name="TC" value="X7R" constant="no"/>
-<attribute name="TOLERANCE" value="+-10%" constant="no"/>
-<attribute name="VALUE" value="10nF" constant="no"/>
-<attribute name="VOLTAGE" value="25V" constant="no"/>
-</technology>
-</technologies>
-</device>
-<device name="-0603" package="C0603">
-<connects>
-<connect gate="G$1" pin="1" pad="P$1"/>
-<connect gate="G$1" pin="2" pad="P$2"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:2539381/2"/>
-</package3dinstances>
-<technologies>
-<technology name="-50V_10%_X7R">
-<attribute name="DIGIKEY#" value="311-1085-1-ND" constant="no"/>
-<attribute name="MANF" value="YAGEO" constant="no"/>
-<attribute name="MANF#" value="CC0603KRX7R9BB103" constant="no"/>
-<attribute name="OPERATING_TEMP" value="-55°C ~ 125°C" constant="no"/>
-<attribute name="PACKAGE" value="0603" constant="no"/>
-<attribute name="TC" value="X7R" constant="no"/>
-<attribute name="TOLERANCE" value="+-10%" constant="no"/>
-<attribute name="VALUE" value="10nF" constant="no"/>
-<attribute name="VOLTAGE" value="50V" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -3312,7 +3261,7 @@ package type OT</description>
 <packageinstance name="1X03-PTH-2.54-RA"/>
 </packageinstances>
 </package3d>
-<package3d name="2X03-PTH-2.54" urn="urn:adsk.eagle:package:8729607/1" type="box" library_version="37">
+<package3d name="2X03-PTH-2.54" urn="urn:adsk.eagle:package:8729607/3" type="model" library_version="38">
 <packageinstances>
 <packageinstance name="2X03-PTH-2.54"/>
 </packageinstances>
@@ -3521,7 +3470,7 @@ package type OT</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="PINHEAD_2X03" urn="urn:adsk.eagle:component:8729608/1" prefix="CON" library_version="37">
+<deviceset name="PINHEAD_2X03" urn="urn:adsk.eagle:component:8729608/2" prefix="CON" library_version="38">
 <gates>
 <gate name="G$1" symbol="M0203" x="0" y="0"/>
 </gates>
@@ -3536,7 +3485,7 @@ package type OT</description>
 <connect gate="G$1" pin="6" pad="6"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:8729607/1"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:8729607/3"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -3810,7 +3759,7 @@ package type OT</description>
 <parts>
 <part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A4L-LOC" device=""/>
 <part name="IC1" library="stm32" library_urn="urn:adsk.eagle:library:2473361" deviceset="STM32F103CBT7" device="" package3d_urn="urn:adsk.eagle:package:2473350/3"/>
-<part name="CON1" library="Connectors" library_urn="urn:adsk.eagle:library:3750510" deviceset="USB" device="-1" package3d_urn="urn:adsk.eagle:package:1041165/1"/>
+<part name="CON1" library="Connectors" library_urn="urn:adsk.eagle:library:3750510" deviceset="USB" device="-1" package3d_urn="urn:adsk.eagle:package:1041165/2"/>
 <part name="Q1" library="crystal" library_urn="urn:adsk.eagle:library:2539107" deviceset="CRYSTAL-4P" device="-3.2X5-4P" package3d_urn="urn:adsk.eagle:package:2539116/3" technology="-8MHZ" value="8 MHz"/>
 <part name="C1" library="C_digikey" library_urn="urn:adsk.eagle:library:2539367" deviceset="18PF" device="-0603" package3d_urn="urn:adsk.eagle:package:2539381/2" technology="-50V_5%_NP0" value="18pF"/>
 <part name="C2" library="C_digikey" library_urn="urn:adsk.eagle:library:2539367" deviceset="18PF" device="-0603" package3d_urn="urn:adsk.eagle:package:2539381/2" technology="-50V_5%_NP0" value="18pF"/>
@@ -3894,9 +3843,7 @@ package type OT</description>
 <part name="+P6" library="supply_symbols" library_urn="urn:adsk.eagle:library:5017758" deviceset="3.3V" device=""/>
 <part name="+P7" library="supply_symbols" library_urn="urn:adsk.eagle:library:5017758" deviceset="3.3V" device=""/>
 <part name="C15" library="C_digikey" library_urn="urn:adsk.eagle:library:2539367" deviceset="1µF" device="-0603" package3d_urn="urn:adsk.eagle:package:2539381/2" technology="-10V_10%_X5R" value="1µF"/>
-<part name="C16" library="C_digikey" library_urn="urn:adsk.eagle:library:2539367" deviceset="10NF" device="-0603" package3d_urn="urn:adsk.eagle:package:2539381/2" technology="-50V_10%_X7R" value="10nF"/>
 <part name="GND23" library="supply_symbols" library_urn="urn:adsk.eagle:library:5017758" deviceset="GND" device="" value="GND"/>
-<part name="GND24" library="supply_symbols" library_urn="urn:adsk.eagle:library:5017758" deviceset="GND" device="" value="GND"/>
 <part name="GND25" library="supply_symbols" library_urn="urn:adsk.eagle:library:5017758" deviceset="GND" device="" value="GND"/>
 <part name="+P8" library="supply_symbols" library_urn="urn:adsk.eagle:library:5017758" deviceset="3.3V" device=""/>
 <part name="+P9" library="supply_symbols" library_urn="urn:adsk.eagle:library:5017758" deviceset="3.3V" device=""/>
@@ -3928,7 +3875,7 @@ package type OT</description>
 <part name="R19" library="R_digikey" library_urn="urn:adsk.eagle:library:2539499" deviceset="120R" device="-0603" package3d_urn="urn:adsk.eagle:package:2539515/2" technology="-1%" value="120R"/>
 <part name="R20" library="R_digikey" library_urn="urn:adsk.eagle:library:2539499" deviceset="120R" device="-0603" package3d_urn="urn:adsk.eagle:package:2539515/2" technology="-1%" value="120R"/>
 <part name="CON4" library="Connectors" library_urn="urn:adsk.eagle:library:3750510" deviceset="CON-2X5P" device="" package3d_urn="urn:adsk.eagle:package:8721870/2"/>
-<part name="CON5" library="Connectors" library_urn="urn:adsk.eagle:library:3750510" deviceset="CON-6P" device="-DF13" package3d_urn="urn:adsk.eagle:package:8719648/2"/>
+<part name="CON5" library="Connectors" library_urn="urn:adsk.eagle:library:3750510" deviceset="CON-6P" device="-DF13" package3d_urn="urn:adsk.eagle:package:8719648/3"/>
 <part name="+P15" library="supply_symbols" library_urn="urn:adsk.eagle:library:5017758" deviceset="3.3V" device=""/>
 <part name="GND32" library="supply_symbols" library_urn="urn:adsk.eagle:library:5017758" deviceset="GND" device="" value="GND"/>
 <part name="R21" library="R_digikey" library_urn="urn:adsk.eagle:library:2539499" deviceset="120R" device="-0603" package3d_urn="urn:adsk.eagle:package:2539515/2" technology="-1%" value="120R"/>
@@ -3948,7 +3895,7 @@ package type OT</description>
 <part name="D2" library="Diodes" library_urn="urn:adsk.eagle:library:2473263" deviceset="BAT30SWFILM" device="" package3d_urn="urn:adsk.eagle:package:7365870/2"/>
 <part name="+P19" library="supply_symbols" library_urn="urn:adsk.eagle:library:5017758" deviceset="3.3V" device=""/>
 <part name="GND36" library="supply_symbols" library_urn="urn:adsk.eagle:library:5017758" deviceset="GND" device="" value="GND"/>
-<part name="CON10" library="pinhead" library_urn="urn:adsk.eagle:library:2540341" deviceset="PINHEAD_2X03" device="-PTH-2.54" package3d_urn="urn:adsk.eagle:package:8729607/1"/>
+<part name="CON10" library="pinhead" library_urn="urn:adsk.eagle:library:2540341" deviceset="PINHEAD_2X03" device="-PTH-2.54" package3d_urn="urn:adsk.eagle:package:8729607/3"/>
 </parts>
 <sheets>
 <sheet>
@@ -4279,17 +4226,8 @@ No divider needed</text>
 <attribute name="PACKAGE" x="10.668" y="99.568" size="0.508" layer="97" rot="R270" align="center"/>
 <attribute name="VOLTAGE" x="9.906" y="103.886" size="0.762" layer="96" rot="R90" align="bottom-center"/>
 </instance>
-<instance part="C16" gate="G$1" x="15.24" y="101.6" smashed="yes" rot="R90">
-<attribute name="NAME" x="16.129" y="102.87" size="1.27" layer="95" rot="R90" align="center-left"/>
-<attribute name="VALUE" x="14.986" y="100.33" size="0.762" layer="96" rot="R90" align="bottom-right"/>
-<attribute name="PACKAGE" x="15.748" y="99.568" size="0.508" layer="97" rot="R270" align="center"/>
-<attribute name="VOLTAGE" x="14.986" y="103.886" size="0.762" layer="96" rot="R90" align="bottom-center"/>
-</instance>
 <instance part="GND23" gate="1" x="10.16" y="93.98" smashed="yes">
 <attribute name="VALUE" x="10.16" y="92.71" size="1.27" layer="96" font="vector" ratio="15" align="center"/>
-</instance>
-<instance part="GND24" gate="1" x="15.24" y="93.98" smashed="yes">
-<attribute name="VALUE" x="15.24" y="92.71" size="1.27" layer="96" font="vector" ratio="15" align="center"/>
 </instance>
 <instance part="GND25" gate="1" x="20.32" y="109.22" smashed="yes" rot="R270">
 <attribute name="VALUE" x="19.05" y="109.22" size="1.27" layer="96" font="vector" ratio="15" rot="R270" align="center"/>
@@ -4674,11 +4612,6 @@ No divider needed</text>
 <wire x1="10.16" y1="96.52" x2="10.16" y2="99.06" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="C16" gate="G$1" pin="1"/>
-<pinref part="GND24" gate="1" pin="GND"/>
-<wire x1="15.24" y1="96.52" x2="15.24" y2="99.06" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="IC1" gate="G$1" pin="VSSA"/>
 <pinref part="GND25" gate="1" pin="GND"/>
 <wire x1="22.86" y1="109.22" x2="33.02" y2="109.22" width="0.1524" layer="91"/>
@@ -4946,9 +4879,6 @@ No divider needed</text>
 <pinref part="C15" gate="G$1" pin="2"/>
 <wire x1="15.24" y1="106.68" x2="10.16" y2="106.68" width="0.1524" layer="91"/>
 <wire x1="10.16" y1="104.14" x2="10.16" y2="106.68" width="0.1524" layer="91"/>
-<pinref part="C16" gate="G$1" pin="2"/>
-<wire x1="15.24" y1="104.14" x2="15.24" y2="106.68" width="0.1524" layer="91"/>
-<junction x="15.24" y="106.68"/>
 <pinref part="+P8" gate="G$1" pin="VDD_3V3"/>
 <wire x1="10.16" y1="109.22" x2="10.16" y2="106.68" width="0.1524" layer="91"/>
 <junction x="10.16" y="106.68"/>
