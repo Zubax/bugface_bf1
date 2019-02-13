@@ -6,6 +6,8 @@ It is a low-cost design with a BOM value around $10.00​ and supported on all o
 
 **Documentation: <https://kb.zubax.com/x/iIAh>**
 
+**3d repesentation may be found [here](https://a360.co/2DB6SOl)**
+
 ## Key Features / Added Value
 
 - Firmware compatible to the Black Magic probe.
