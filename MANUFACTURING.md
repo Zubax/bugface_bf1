@@ -74,25 +74,26 @@ flashed), and the other end to the corresponding DroneCode debug connector of th
 zero offset from the start of the flash memory.
 4. Disconnect the target board.
 
-The following script can be used to create a loadable ELF from a flat binary: <https://gist.github.com/tangrs/4030336>.
-Usage example:
+The following comand can be used to create a loadable ELF from a flat binary:
 
-    ./bin2elf.sh blackmagic_dfu.bin blackmagic_dfu.elf 0x08000000
+    arm-none-eabi-objcopy -I binary -O elf32-little --change-section-address .data=0x08000000 blackmagic_dfu.bin blackmagic_dfu.elf
+
+Or download the blackmagic_dfu file from here: <https://files.zubax.com/products/dronecode_probe> 
 
 ## Flashing the main firmware
 
 Connect the board to USB while holding the button `BOOT`.
-The red LED on the board should start blinking.
+All LEDs on the board should start blinking alernately.
 The system will report the device as follows:
 
 ```
 $ dmesg
-usb 2-6.2.3: new full-speed USB device number 12 using ehci-pci
-usb 2-6.2.3: New USB device found, idVendor=1d50, idProduct=6017
-usb 2-6.2.3: New USB device strings: Mfr=1, Product=2, SerialNumber=3
-usb 2-6.2.3: Product: Black Magic Probe (Upgrade)
-usb 2-6.2.3: Manufacturer: Black Sphere Technologies
-usb 2-6.2.3: SerialNumber: B5DCABF5
+usb 3-1.4.1: new full-speed USB device number 16 using xhci_hcd
+usb 3-1.4.1: New USB device found, idVendor=1d50, idProduct=6017
+usb 3-1.4.1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+usb 3-1.4.1: Product: Black Magic Probe (Upgrade)
+usb 3-1.4.1: Manufacturer: Black Sphere Technologies
+usb 3-1.4.1: SerialNumber: 7ECB8AC5
 ```
 
 Then go to the directory with firmware sources and execute the following script:
@@ -100,11 +101,27 @@ Then go to the directory with firmware sources and execute the following script:
 ```bash
 sudo scripts/stm32_mem.py src/blackmagic.bin
 ```
+The following information will be reported in the console:
+
+```
+USB Device Firmware Upgrade - Host Utility -- version 1.2
+Copyright (C) 2011  Black Sphere Technologies
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+
+Device ID:	 1d50:6017
+Manufacturer:	 Black Sphere Technologies
+Product:	 Black Magic Probe (Upgrade)
+Serial:		 7ECB8AC5
+Programming memory at 0x08018000
+Verifying memory at   0x08018000
+Verified!
+All operations complete!
+```
 
 Disconnect the board afterwards.
 
 Alternative instructions for this step are available from
-<http://px4.io/dev/jtag/black_magic_probe#instructions_for_linux>.
+<https://github.com/blacksphere/blackmagic/wiki/Upgrading-Firmware>.
 
 ## Testing
 
@@ -113,18 +130,14 @@ The system will detect a new CDC-ACM device:
 
 ```
 $ dmesg
-usb 2-6.2.3: new full-speed USB device number 9 using ehci-pci
-usb 2-6.2.3: New USB device found, idVendor=1d50, idProduct=6018
-usb 2-6.2.3: New USB device strings: Mfr=1, Product=2, SerialNumber=3
-usb 2-6.2.3: Product: Black Magic Probe
-usb 2-6.2.3: Manufacturer: Black Sphere Technologies
-usb 2-6.2.3: SerialNumber: B5DCABF5
-cdc_acm 2-6.2.3:1.0: This device cannot do calls on its own. It is not a modem.
-cdc_acm 2-6.2.3:1.0: ttyACM0: USB ACM device
-cdc_acm 2-6.2.3:1.2: This device cannot do calls on its own. It is not a modem.
-cdc_acm 2-6.2.3:1.2: ttyACM1: USB ACM device
-usbcore: registered new interface driver cdc_acm
-cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+usb 3-1.4.1: new full-speed USB device number 19 using xhci_hcd
+usb 3-1.4.1: New USB device found, idVendor=1d50, idProduct=6018
+usb 3-1.4.1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+usb 3-1.4.1: Product: Black Magic Probe
+usb 3-1.4.1: Manufacturer: Black Sphere Technologies
+usb 3-1.4.1: SerialNumber: 7ECB8AC5
+cdc_acm 3-1.4.1:1.0: ttyACM0: USB ACM device
+cdc_acm 3-1.4.1:1.2: ttyACM1: USB ACM device
 ```
 
 Connect the board to a target (e.g. another unflashed DroneCode Probe, as described in one of the steps above)
