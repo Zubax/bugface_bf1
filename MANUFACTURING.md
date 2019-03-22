@@ -62,7 +62,8 @@ It is adviced to use the following tool for flashing: <https://github.com/Zubax/
 ### Using JTAG/SWD
 
 1. Connect the board to USB and SWD pins of the board to any other SWD adapter (e.g., another Dronecode Probe).
-SWD pins are marked on the bottom side of the board: SWD, GND, SWC, 5V. Note, that 5V pin is target voltage probe pin. Don't connect it to any power supply.  
+The SWD signals are marked on the bottom side of the board: `SWD`, `GND`, `SWC`, `5V`.
+Note that the pin marked `5V` is the target voltage sensing pin (not a power supply input).
 
 2. Using any of the available tools, flash the DFU bootloader image at 0x08000000 (i.e., at the start of the flash memory).
 
