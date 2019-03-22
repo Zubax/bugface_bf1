@@ -52,10 +52,10 @@ Flash the DFU bootloader image using one of the methods below.
 (note that the jumper itself is marked as not to be installed).
 The microcontroller will start the embedded bootloader, accessible via the serial port.
 Once the board is powered, the tweezers can be removed.
-It is adviced to use the following tool for flashing: <https://github.com/Zubax/zubax_serial_updater>.
 
 2. Using any available STM32 serial bootloader tool, load the DFU bootloader image onto the board at zero offset
 (i.e. 0x08000000, which is the address of flash).
+It is advised to use the following tool for flashing: <https://github.com/Zubax/zubax_serial_updater>.
 
 3. Disconnect the board from USB.
 
