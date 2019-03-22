@@ -37,6 +37,11 @@ The output will contain the following two files (among others):
 
 Prebuilt binaries can be found here: <https://files.zubax.com/products/dronecode_probe>.
 
+The following comands can be used to create a loadable ELF from a flat binary:
+
+    arm-none-eabi-objcopy -I binary -O elf32-little --change-section-address .data=0x08000000 blackmagic_dfu.bin blackmagic_dfu.elf
+    arm-none-eabi-objcopy -I binary -O elf32-little --change-section-address .data=0x08000000 blackmagic.bin blackmagic.elf
+
 ## Flashing the DFU bootloader
 
 Flash the DFU bootloader image using one of the methods below.
@@ -47,22 +52,22 @@ Flash the DFU bootloader image using one of the methods below.
 (note that the jumper itself is marked as not to be installed).
 The microcontroller will start the embedded bootloader, accessible via the serial port.
 Once the board is powered, the tweezers can be removed.
+It is adviced to use the following tool for flashing: <https://github.com/Zubax/zubax_serial_updater>.
+
 2. Using any available STM32 serial bootloader tool, load the DFU bootloader image onto the board at zero offset
 (i.e. 0x08000000, which is the address of flash).
-3. Disconnect the board from USB.
 
-It is adviced to use the following tool for flashing: <https://github.com/Zubax/zubax_serial_updater>.
+3. Disconnect the board from USB.
 
 ### Using JTAG/SWD
 
-Connect the SWD port of the target board to any other SWD adapter (e.g., another Dronecode Probe).
-Using any of the available tools, flash the DFU bootloader image at 0x08000000 (i.e., at the start of the flash memory).
+1. Connect the board to USB and SWD pins of the board to any other SWD adapter (e.g., another Dronecode Probe).
+SWD pins are marked on the bottom side of the board: SWD, GND, SWC, 5V. Note, that 5V pin is target voltage probe pin. Don't connect it to any power supply.  
 
-The following comand can be used to create a loadable ELF from a flat binary:
+2. Using any of the available tools, flash the DFU bootloader image at 0x08000000 (i.e., at the start of the flash memory).
 
-    arm-none-eabi-objcopy -I binary -O elf32-little --change-section-address .data=0x08000000 blackmagic_dfu.bin blackmagic_dfu.elf
+3. Disconnect the board from USB.
 
-Or download a prebuilt blackmagic_dfu.bin file from here: <https://files.zubax.com/products/dronecode_probe>.
 
 ## Flashing the main firmware
 
@@ -134,4 +139,5 @@ tar ext /dev/ttyACM0    # Or another port
 mon swdp_scan
 attach 1
 load
+kill
 ```
