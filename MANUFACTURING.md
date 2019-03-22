@@ -1,4 +1,4 @@
-# DroneCode Probe manufacturing
+# Dronecode Probe manufacturing
 
 Please open a ticket or reach <info@zubax.com> if questions arise.
 
@@ -18,7 +18,7 @@ The following APT packages must be installed:
 Also, the ARM GCC toolchain must be installed in order to build the firmware and test the board with GDB.
 The toolchain is available from <https://launchpad.net/gcc-arm-embedded>,
 or from an APT package `gcc-arm-none-eabi`.
-Recommended GCC version is 4.9.
+Recommended GCC version is 7.2.
 
 ## Assembling
 
@@ -32,8 +32,8 @@ Keep in mind that certain components are explicitly marked as not to be installe
 Get the sources from <https://github.com/blacksphere/blackmagic> and build them.
 The output will contain the following two files (among others):
 
-* `blackmagic_dfu.bin` - DFU bootloader.
-* `blackmagic.bin` - main firmware.
+* `blackmagic_dfu.bin` - the USB DFU bootloader.
+* `blackmagic.bin` - the main firmware.
 
 Prebuilt binaries can be found here: <https://files.zubax.com/products/dronecode_probe>.
 
@@ -41,7 +41,7 @@ Prebuilt binaries can be found here: <https://files.zubax.com/products/dronecode
 
 Flash the DFU bootloader image using one of the methods below.
 
-### Using STM32 serial bootloader
+### Using the STM32 serial bootloader
 
 1. Using tweezers, close the jumper `BOOT0` and connect the board to USB
 (note that the jumper itself is marked as not to be installed).
@@ -55,30 +55,14 @@ It is adviced to use the following tool for flashing: <https://github.com/Zubax/
 
 ### Using JTAG/SWD
 
-This option will require an adapter cable, with ARM Cortex debug connector (1.27mm 2x5) on one end
-and any of DroneCode debug connectors on the other end. The pinout of the cable must be as follows:
-
-ARM Cortex debug connector      | DroneCode debug connector (any type)
---------------------------------|-------------------------------------
-`GND` (pin 3 or 5)              | `GND` (pin 6)
-`SWDIO/TMS` (pin 2)             | `UART_RX` (pin 2)
-`SWDCLK/TDO` (pin 4)            | `UART_TX` (pin 3)
-
-Steps:
-
-1. Install resistors (or short with solder blobs) between the microcontroller's own SWD interface and UART signals.
-Currently their designators are R14 and R15.
-2. Connect one end of the adapter cable to a JTAG/SWD adapter (e.g. to an another DroneCode Probe that is already
-flashed), and the other end to the corresponding DroneCode debug connector of the target device.
-3. Using any of the available tools, flash the DFU bootloader image to the target board with
-zero offset from the start of the flash memory.
-4. Disconnect the target board.
+Connect the SWD port of the target board to any other SWD adapter (e.g., another Dronecode Probe).
+Using any of the available tools, flash the DFU bootloader image at 0x08000000 (i.e., at the start of the flash memory).
 
 The following comand can be used to create a loadable ELF from a flat binary:
 
     arm-none-eabi-objcopy -I binary -O elf32-little --change-section-address .data=0x08000000 blackmagic_dfu.bin blackmagic_dfu.elf
 
-Or download the blackmagic_dfu file from here: <https://files.zubax.com/products/dronecode_probe> 
+Or download a prebuilt blackmagic_dfu.bin file from here: <https://files.zubax.com/products/dronecode_probe>.
 
 ## Flashing the main firmware
 
@@ -140,8 +124,8 @@ cdc_acm 3-1.4.1:1.0: ttyACM0: USB ACM device
 cdc_acm 3-1.4.1:1.2: ttyACM1: USB ACM device
 ```
 
-Connect the board to a target (e.g. another unflashed DroneCode Probe, as described in one of the steps above)
-and try to load a firmware using GDB.
+Connect the board to a target (e.g. another unflashed Dronecode Probe, as described in one of the steps above)
+and try to load its firmware using GDB.
 For example, start `arm-none-eabi-gdb` providing path to the ELF,
 and execute the following commands in the internal command prompt:
 
@@ -151,6 +135,3 @@ mon swdp_scan
 attach 1
 load
 ```
-
-The steps can be automated with a script, e.g.
-<https://github.com/Zubax/zubax_rtems/blob/master/flashers/flash_via_blackmagic.sh>.
