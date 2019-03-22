@@ -61,7 +61,8 @@ It is advised to use the following tool for flashing: <https://github.com/Zubax/
 
 ### Using JTAG/SWD
 
-1. Connect the board to USB and SWD pins of the board to any other SWD adapter (e.g., another Dronecode Probe).
+1. Connect the target board to the computer via USB; connect its SWD pins to any other SWD adapter
+(e.g., another Dronecode Probe).
 The SWD signals are marked on the bottom side of the board: `SWD`, `GND`, `SWC`, `5V`.
 Note that the pin marked `5V` is the target voltage sensing pin (not a power supply input).
 
