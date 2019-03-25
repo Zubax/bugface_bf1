@@ -40,7 +40,6 @@ Prebuilt binaries can be found here: <https://files.zubax.com/products/dronecode
 The following comands can be used to create a loadable ELF from a flat binary:
 
     arm-none-eabi-objcopy -I binary -O elf32-little --change-section-address .data=0x08000000 blackmagic_dfu.bin blackmagic_dfu.elf
-    arm-none-eabi-objcopy -I binary -O elf32-little --change-section-address .data=0x08000000 blackmagic.bin blackmagic.elf
 
 ## Flashing the DFU bootloader
 
