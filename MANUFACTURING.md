@@ -77,7 +77,7 @@ All LEDs on the board should start blinking alernately.
 The system will report the device as follows:
 
 ```
-$ dmesg
+$ sudo dmesg
 usb 3-1.4.1: new full-speed USB device number 16 using xhci_hcd
 usb 3-1.4.1: New USB device found, idVendor=1d50, idProduct=6017
 usb 3-1.4.1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
@@ -89,23 +89,24 @@ usb 3-1.4.1: SerialNumber: 7ECB8AC5
 Then go to the directory with firmware sources and execute the following script:
 
 ```bash
-sudo scripts/stm32_mem.py src/blackmagic.bin
+sudo dfu-util -d 1d50:6017 -s 0x08002000:leave -R -D src/blackmagic.bin
 ```
 The following information will be reported in the console:
 
 ```
-USB Device Firmware Upgrade - Host Utility -- version 1.2
-Copyright (C) 2011  Black Sphere Technologies
-License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
-
-Device ID:	 1d50:6017
-Manufacturer:	 Black Sphere Technologies
-Product:	 Black Magic Probe (Upgrade)
-Serial:		 7ECB8AC5
-Programming memory at 0x08018000
-Verifying memory at   0x08018000
-Verified!
-All operations complete!
+Opening DFU capable USB device...
+ID 1d50:6017
+Run-time device DFU version 011a
+Claiming USB DFU Interface...
+Setting Alternate Setting #0 ...
+Determining device status: state = dfuIDLE, status = 0
+dfuIDLE, continuing
+DFU mode device DFU version 011a
+Device returned transfer size 1024
+DfuSe interface name: "Internal Flash   "
+Downloading to address = 0x08002000, size = 120004
+Download	[=========================] 100%       120004 bytes
+Download done.
 ```
 
 Disconnect the board afterwards.
