@@ -35,7 +35,7 @@ The output will contain the following two files (among others):
 * `blackmagic_dfu.bin` - the USB DFU bootloader.
 * `blackmagic.bin` - the main firmware.
 
-Prebuilt binaries can be found here: <https://files.zubax.com/products/dronecode_probe>.
+Prebuilt binaries can be found here: <https://files.zubax.com/products/com.zubax.bugface>.
 
 The following comands can be used to create a loadable ELF from a flat binary:
 
