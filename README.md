@@ -75,10 +75,9 @@ The connector part numbers are as follows:
 ### ARM Cortex M debug connector
 
 ![ARM Cortex M debug cable - 2x5 pins, pitch 1.27 mm](docs/figures/ARM_Cortex_M_debug_cable.jpg)
+![ARM Cortex M debug connector - 2x5 pins, pitch 1.27 mm](docs/figures/Cortex_debug_connector.png)
 
 This is the standard ARM Cortex M debug connector that can be seen on many other ARM debuggers.
-
-![ARM Cortex M debug connector - 2x5 pins, pitch 1.27 mm](docs/figures/Cortex_debug_connector.png)
 
 | Pin | Name            |
 | --- | --------------- |
