@@ -1,6 +1,6 @@
-# Droneсode Probe
+# Zubax BugFace BF1
 
-Dronecode Probe is a generic JTAG/SWD+UART console adapter compatible with most ARM Cortex based designs and in particular with the hardware maintained by the [Dronecode project](http://dronecode.org/).
+Zubax BugFace BF1 (formerly known as Dronecode Probe) is a generic JTAG/SWD+UART console adapter compatible with most ARM Cortex based designs and in particular with the hardware maintained by the [Dronecode project](http://dronecode.org/).
 
 The design is based on Black Magic Probe and is distributed under open source licenses. The full description of its features and supported targets can be found at the [Black Magic Probe homepage](https://black-magic.org/).
 
@@ -32,7 +32,7 @@ For the manufacturing instructions refer to [MANUFACTURING.md](MANUFACTURING.md)
 
 ## USB interface
 
-Dronecode Probe is a composite USB device that incorporates two virtual serial port interfaces:
+BF1 is a composite USB device that incorporates two virtual serial port interfaces:
 
 1. The first virtual serial port interface is connected to the debugger's embedded GDB server; this interface is used by the host-side debugger to interact with the target. The baud rate and other parameters of a typical serial port are irrelevant for this interface, because it has no physical representation.
 
