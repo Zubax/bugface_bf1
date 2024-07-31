@@ -1,4 +1,4 @@
-# Dronecode Probe manufacturing
+# BF1 manufacturing
 
 Please open a ticket or reach <info@zubax.com> if questions arise.
 
@@ -60,8 +60,7 @@ It is advised to use the following tool for flashing: <https://github.com/Zubax/
 
 ### Using JTAG/SWD
 
-1. Connect the target board to the computer via USB; connect its SWD pins to any other SWD adapter
-(e.g., another Dronecode Probe).
+1. Connect the target board to the computer via USB; connect its SWD pins to any other SWD adapter (e.g., another BF1).
 The SWD signals are marked on the bottom side of the board: `SWD`, `GND`, `SWC`, `5V`.
 Note that the pin marked `5V` is the target voltage sensing pin (not a power supply input).
 
@@ -131,7 +130,7 @@ cdc_acm 3-1.4.1:1.0: ttyACM0: USB ACM device
 cdc_acm 3-1.4.1:1.2: ttyACM1: USB ACM device
 ```
 
-Connect the board to a target (e.g. another unflashed Dronecode Probe, as described in one of the steps above)
+Connect the board to a target (e.g. another unflashed BF1, as described in one of the steps above)
 and try to load its firmware using GDB.
 For example, start `arm-none-eabi-gdb` providing path to the ELF,
 and execute the following commands in the internal command prompt:
