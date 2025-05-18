@@ -33,7 +33,7 @@ Get the sources from <https://github.com/blacksphere/blackmagic> and build them.
 The output will contain the following two files (among others):
 
 * `blackmagic_dfu.bin` - the USB DFU bootloader.
-* `blackmagic.bin` - the main firmware.
+* `blackmagic_latest.bin` - the main firmware.
 
 Prebuilt binaries can be found here: <https://files.zubax.com/products/com.zubax.bugface>.
 
@@ -41,35 +41,14 @@ The following comands can be used to create a loadable ELF from a flat binary:
 
     arm-none-eabi-objcopy -I binary -O elf32-little --change-section-address .data=0x08000000 blackmagic_dfu.bin blackmagic_dfu.elf
 
-## Flashing the DFU bootloader
+## Flashing the firmware for the first time
 
-Flash the DFU bootloader image using one of the methods below.
+To upload the firmware for the first time, simply use [`flash_bugface_bf1.sh`](flash_bugface_bf1.sh);
+read the usage instructions in the comments.
 
-### Using the STM32 serial bootloader
+## Updating the firmware via DFU
 
-1. Using tweezers, close the jumper `BOOT0` and connect the board to USB
-(note that the jumper itself is marked as not to be installed).
-The microcontroller will start the embedded bootloader, accessible via the serial port.
-Once the board is powered, the tweezers can be removed.
-
-2. Using any available STM32 serial bootloader tool, load the DFU bootloader image onto the board at zero offset
-(i.e. 0x08000000, which is the address of flash).
-It is advised to use the following tool for flashing: <https://github.com/Zubax/zubax_serial_updater>.
-
-3. Disconnect the board from USB.
-
-### Using JTAG/SWD
-
-1. Connect the target board to the computer via USB; connect its SWD pins to any other SWD adapter (e.g., another BF1).
-The SWD signals are marked on the bottom side of the board: `SWD`, `GND`, `SWC`, `5V`.
-Note that the pin marked `5V` is the target voltage sensing pin (not a power supply input).
-
-2. Using any of the available tools, flash the DFU bootloader image at 0x08000000 (i.e., at the start of the flash memory).
-
-3. Disconnect the board from USB.
-
-
-## Flashing the main firmware
+If you want to replace an already uploaded firmware, you can also do it as described in this section.
 
 Connect the board to USB while holding the button `BOOT`.
 All LEDs on the board should start blinking alernately.
