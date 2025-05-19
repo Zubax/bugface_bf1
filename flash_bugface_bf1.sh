@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/bash
 # Usage:
 # - Connect one functional BugFace to this PC.
 # - Connect it to the debug pins of the BugFace being flashed.
@@ -15,6 +15,7 @@ echo "Working directory: $tmpdir"
 
 gdb_remote=$(readlink -f /dev/serial/by-id/*Black*Magic*Probe*0)
 [ -e "$gdb_remote" ] || die "Debugger not found or more than one is available"
++echo "GDB remote: $gdb_remote"
 
 which arm-none-eabi-objcopy || die "could not locate arm-none-eabi-objcopy"
 which wget || die "could not locate wget"
@@ -29,7 +30,7 @@ cat > script.gdb <<EOF
 
 set confirm off
 target extended-remote $gdb_remote
-monitor auto_scan
+monitor swdp_scan
 attach 1
 load dfu.elf
 load fw.elf
