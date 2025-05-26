@@ -20,8 +20,8 @@ gdb_remote=$(readlink -f /dev/serial/by-id/*Black*Magic*Probe*0)
 which arm-none-eabi-objcopy || die "could not locate arm-none-eabi-objcopy"
 which wget || die "could not locate wget"
 
-wget https://files.zubax.com/products/com.zubax.bugface/bf1/blackmagic_dfu.bin    -O dfu.bin || die "could not download DFU firmware"
-wget https://files.zubax.com/products/com.zubax.bugface/bf1/blackmagic_latest.bin -O fw.bin  || die "could not download firmware"
+wget https://files.zubax.com:49152/products/com.zubax.bugface/bf1/blackmagic_dfu.bin    -O dfu.bin || die "could not download DFU firmware"
+wget https://files.zubax.com:49152/products/com.zubax.bugface/bf1/blackmagic_latest.bin -O fw.bin  || die "could not download firmware"
 
 arm-none-eabi-objcopy -I binary -O elf32-little --change-section-address .data=0x08000000 dfu.bin dfu.elf || die "objcopy failed"
 arm-none-eabi-objcopy -I binary -O elf32-little --change-section-address .data=0x08002000 fw.bin  fw.elf  || die "objcopy failed"
